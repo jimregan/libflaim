@@ -866,7 +866,7 @@ FLMINT FLMAPI f_printf(
 	f_va_end(args);
 	
 #ifndef FLM_RING_ZERO_NLM
-	fprintf( stdout, szTmpBuf);
+	fprintf( stdout, "%s", szTmpBuf);
 	fflush( stdout);
 #endif
 

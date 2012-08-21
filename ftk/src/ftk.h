@@ -190,7 +190,7 @@
 				#define FLM_PPC
 				#define FLM_BIG_ENDIAN
 				#define FLM_STRICT_ALIGNMENT			
-			#elif defined( __x86__) || defined( __x86_64__)
+			#elif defined( __x86__) || defined( __x86_64__) || defined(__i386__)
 				#define FLM_X86
 			#else
 				#error Platform architecture not supported
@@ -5543,6 +5543,10 @@
 	#define FLM_CURSOR_UNDERLINE		0x02
 	#define FLM_CURSOR_INVISIBLE		0x04
 	#define FLM_CURSOR_VISIBLE			0x08
+
+#ifdef FLM_UNIX
+#include <signal.h>
+#endif
 	
 	typedef struct FTX_SCREEN	FTX_SCREEN;
 	
